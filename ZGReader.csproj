@@ -86,6 +86,7 @@
     <None Include="Resources\minimize_box.png" />
     <None Include="Resources\form_close.png" />
     <None Include="Resources\file_search.png" />
+    <None Include="Resources\warn_save.png" />
     <Content Include="ZGRead.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

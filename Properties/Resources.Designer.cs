@@ -60,6 +60,13 @@ namespace ZGReader.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap button_save {
+            get {
+                object obj = ResourceManager.GetObject("button_save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap file_search {
             get {
                 object obj = ResourceManager.GetObject("file_search", resourceCulture);
