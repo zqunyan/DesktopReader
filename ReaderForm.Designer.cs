@@ -39,19 +39,20 @@
             this.tsmiLoadBook = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteBook = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveBook = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEncoding = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.pFind = new System.Windows.Forms.Panel();
-            this.txtFindText = new System.Windows.Forms.TextBox();
-            this.pEncoding = new System.Windows.Forms.Panel();
-            this.lblFormClose = new System.Windows.Forms.Label();
-            this.lblEncodingClose = new System.Windows.Forms.Label();
-            this.btnSaveEncoding = new System.Windows.Forms.Button();
-            this.lblMin = new System.Windows.Forms.Label();
             this.lblFindClose = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
-            this.tsmiEncoding = new System.Windows.Forms.ToolStripMenuItem();
-            this.rdbUtf8 = new System.Windows.Forms.RadioButton();
+            this.txtFindText = new System.Windows.Forms.TextBox();
+            this.pEncoding = new System.Windows.Forms.Panel();
             this.rdbGb2312 = new System.Windows.Forms.RadioButton();
+            this.rdbUtf8 = new System.Windows.Forms.RadioButton();
+            this.lblEncodingClose = new System.Windows.Forms.Label();
+            this.btnSaveEncoding = new System.Windows.Forms.Button();
+            this.lblFormClose = new System.Windows.Forms.Label();
+            this.lblMin = new System.Windows.Forms.Label();
+            this.listContents = new System.Windows.Forms.ListBox();
             this.MainMenu.SuspendLayout();
             this.pFind.SuspendLayout();
             this.pEncoding.SuspendLayout();
@@ -140,6 +141,13 @@
             this.tsmiSaveBook.Text = "SaveBook";
             this.tsmiSaveBook.Click += new System.EventHandler(this.tsmiSaveBook_Click);
             // 
+            // tsmiEncoding
+            // 
+            this.tsmiEncoding.Name = "tsmiEncoding";
+            this.tsmiEncoding.Size = new System.Drawing.Size(162, 22);
+            this.tsmiEncoding.Text = "Encoding";
+            this.tsmiEncoding.Click += new System.EventHandler(this.tsmiEncoding_Click);
+            // 
             // tsmiSetting
             // 
             this.tsmiSetting.Name = "tsmiSetting";
@@ -153,84 +161,11 @@
             this.pFind.Controls.Add(this.btnFind);
             this.pFind.Controls.Add(this.txtFindText);
             this.pFind.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pFind.Location = new System.Drawing.Point(104, 80);
+            this.pFind.Location = new System.Drawing.Point(27, 12);
             this.pFind.Name = "pFind";
             this.pFind.Size = new System.Drawing.Size(369, 35);
             this.pFind.TabIndex = 2;
             this.pFind.Visible = false;
-            // 
-            // txtFindText
-            // 
-            this.txtFindText.Location = new System.Drawing.Point(3, 4);
-            this.txtFindText.Name = "txtFindText";
-            this.txtFindText.Size = new System.Drawing.Size(306, 27);
-            this.txtFindText.TabIndex = 0;
-            this.txtFindText.TextChanged += new System.EventHandler(this.txtFindText_TextChanged);
-            // 
-            // pEncoding
-            // 
-            this.pEncoding.Controls.Add(this.rdbGb2312);
-            this.pEncoding.Controls.Add(this.rdbUtf8);
-            this.pEncoding.Controls.Add(this.lblEncodingClose);
-            this.pEncoding.Controls.Add(this.btnSaveEncoding);
-            this.pEncoding.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pEncoding.Location = new System.Drawing.Point(155, 121);
-            this.pEncoding.Name = "pEncoding";
-            this.pEncoding.Size = new System.Drawing.Size(241, 36);
-            this.pEncoding.TabIndex = 3;
-            this.pEncoding.Visible = false;
-            // 
-            // lblFormClose
-            // 
-            this.lblFormClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFormClose.AutoSize = true;
-            this.lblFormClose.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormClose.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblFormClose.Image = global::ZGReader.Properties.Resources.form_close;
-            this.lblFormClose.Location = new System.Drawing.Point(567, 2);
-            this.lblFormClose.Name = "lblFormClose";
-            this.lblFormClose.Size = new System.Drawing.Size(14, 15);
-            this.lblFormClose.TabIndex = 3;
-            this.lblFormClose.Text = "X";
-            this.lblFormClose.Click += new System.EventHandler(this.lblFormClose_Click);
-            // 
-            // lblEncodingClose
-            // 
-            this.lblEncodingClose.AutoSize = true;
-            this.lblEncodingClose.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEncodingClose.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblEncodingClose.Image = global::ZGReader.Properties.Resources.form_close;
-            this.lblEncodingClose.Location = new System.Drawing.Point(221, 4);
-            this.lblEncodingClose.Name = "lblEncodingClose";
-            this.lblEncodingClose.Size = new System.Drawing.Size(14, 15);
-            this.lblEncodingClose.TabIndex = 2;
-            this.lblEncodingClose.Text = "X";
-            this.lblEncodingClose.Click += new System.EventHandler(this.lblEncodingClose_Click);
-            // 
-            // btnSaveEncoding
-            // 
-            this.btnSaveEncoding.BackgroundImage = global::ZGReader.Properties.Resources.button_save;
-            this.btnSaveEncoding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSaveEncoding.FlatAppearance.BorderSize = 0;
-            this.btnSaveEncoding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveEncoding.Location = new System.Drawing.Point(176, 6);
-            this.btnSaveEncoding.Name = "btnSaveEncoding";
-            this.btnSaveEncoding.Size = new System.Drawing.Size(25, 25);
-            this.btnSaveEncoding.TabIndex = 1;
-            this.btnSaveEncoding.UseVisualStyleBackColor = true;
-            this.btnSaveEncoding.Click += new System.EventHandler(this.btnSaveEncoding_Click);
-            // 
-            // lblMin
-            // 
-            this.lblMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMin.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMin.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblMin.Image = global::ZGReader.Properties.Resources.minimize_box;
-            this.lblMin.Location = new System.Drawing.Point(540, 4);
-            this.lblMin.Name = "lblMin";
-            this.lblMin.Size = new System.Drawing.Size(14, 10);
-            this.lblMin.TabIndex = 7;
-            this.lblMin.Click += new System.EventHandler(this.lblMin_Click);
             // 
             // lblFindClose
             // 
@@ -258,23 +193,26 @@
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // tsmiEncoding
+            // txtFindText
             // 
-            this.tsmiEncoding.Name = "tsmiEncoding";
-            this.tsmiEncoding.Size = new System.Drawing.Size(162, 22);
-            this.tsmiEncoding.Text = "Encoding";
-            this.tsmiEncoding.Click += new System.EventHandler(this.tsmiEncoding_Click);
+            this.txtFindText.Location = new System.Drawing.Point(3, 4);
+            this.txtFindText.Name = "txtFindText";
+            this.txtFindText.Size = new System.Drawing.Size(306, 27);
+            this.txtFindText.TabIndex = 0;
+            this.txtFindText.TextChanged += new System.EventHandler(this.txtFindText_TextChanged);
             // 
-            // rdbUtf8
+            // pEncoding
             // 
-            this.rdbUtf8.AutoSize = true;
-            this.rdbUtf8.Location = new System.Drawing.Point(4, 6);
-            this.rdbUtf8.Name = "rdbUtf8";
-            this.rdbUtf8.Size = new System.Drawing.Size(70, 24);
-            this.rdbUtf8.TabIndex = 5;
-            this.rdbUtf8.TabStop = true;
-            this.rdbUtf8.Text = "UTF-8";
-            this.rdbUtf8.UseVisualStyleBackColor = true;
+            this.pEncoding.Controls.Add(this.rdbGb2312);
+            this.pEncoding.Controls.Add(this.rdbUtf8);
+            this.pEncoding.Controls.Add(this.lblEncodingClose);
+            this.pEncoding.Controls.Add(this.btnSaveEncoding);
+            this.pEncoding.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pEncoding.Location = new System.Drawing.Point(47, 49);
+            this.pEncoding.Name = "pEncoding";
+            this.pEncoding.Size = new System.Drawing.Size(241, 36);
+            this.pEncoding.TabIndex = 3;
+            this.pEncoding.Visible = false;
             // 
             // rdbGb2312
             // 
@@ -287,6 +225,81 @@
             this.rdbGb2312.Text = "GB-2312";
             this.rdbGb2312.UseVisualStyleBackColor = true;
             // 
+            // rdbUtf8
+            // 
+            this.rdbUtf8.AutoSize = true;
+            this.rdbUtf8.Location = new System.Drawing.Point(4, 6);
+            this.rdbUtf8.Name = "rdbUtf8";
+            this.rdbUtf8.Size = new System.Drawing.Size(70, 24);
+            this.rdbUtf8.TabIndex = 5;
+            this.rdbUtf8.TabStop = true;
+            this.rdbUtf8.Text = "UTF-8";
+            this.rdbUtf8.UseVisualStyleBackColor = true;
+            // 
+            // lblEncodingClose
+            // 
+            this.lblEncodingClose.AutoSize = true;
+            this.lblEncodingClose.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncodingClose.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblEncodingClose.Image = global::ZGReader.Properties.Resources.form_close;
+            this.lblEncodingClose.Location = new System.Drawing.Point(221, 4);
+            this.lblEncodingClose.Name = "lblEncodingClose";
+            this.lblEncodingClose.Size = new System.Drawing.Size(14, 15);
+            this.lblEncodingClose.TabIndex = 2;
+            this.lblEncodingClose.Text = "X";
+            this.lblEncodingClose.Click += new System.EventHandler(this.lblEncodingClose_Click);
+            // 
+            // btnSaveEncoding
+            // 
+            this.btnSaveEncoding.BackgroundImage = global::ZGReader.Properties.Resources.button_save;
+            this.btnSaveEncoding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSaveEncoding.FlatAppearance.BorderSize = 0;
+            this.btnSaveEncoding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveEncoding.Location = new System.Drawing.Point(176, 6);
+            this.btnSaveEncoding.Name = "btnSaveEncoding";
+            this.btnSaveEncoding.Size = new System.Drawing.Size(25, 25);
+            this.btnSaveEncoding.TabIndex = 1;
+            this.btnSaveEncoding.UseVisualStyleBackColor = true;
+            this.btnSaveEncoding.Click += new System.EventHandler(this.btnSaveEncoding_Click);
+            // 
+            // lblFormClose
+            // 
+            this.lblFormClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFormClose.AutoSize = true;
+            this.lblFormClose.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormClose.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblFormClose.Image = global::ZGReader.Properties.Resources.form_close;
+            this.lblFormClose.Location = new System.Drawing.Point(567, 2);
+            this.lblFormClose.Name = "lblFormClose";
+            this.lblFormClose.Size = new System.Drawing.Size(14, 15);
+            this.lblFormClose.TabIndex = 3;
+            this.lblFormClose.Text = "X";
+            this.lblFormClose.Click += new System.EventHandler(this.lblFormClose_Click);
+            // 
+            // lblMin
+            // 
+            this.lblMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMin.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMin.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblMin.Image = global::ZGReader.Properties.Resources.minimize_box;
+            this.lblMin.Location = new System.Drawing.Point(540, 4);
+            this.lblMin.Name = "lblMin";
+            this.lblMin.Size = new System.Drawing.Size(14, 10);
+            this.lblMin.TabIndex = 7;
+            this.lblMin.Click += new System.EventHandler(this.lblMin_Click);
+            // 
+            // listContents
+            // 
+            this.listContents.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listContents.FormattingEnabled = true;
+            this.listContents.ItemHeight = 20;
+            this.listContents.Location = new System.Drawing.Point(122, 91);
+            this.listContents.Name = "listContents";
+            this.listContents.Size = new System.Drawing.Size(320, 164);
+            this.listContents.TabIndex = 8;
+            this.listContents.Visible = false;
+            this.listContents.SelectedIndexChanged += new System.EventHandler(this.listContents_SelectedIndexChanged);
+            // 
             // ReaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -294,10 +307,11 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(584, 261);
             this.ControlBox = false;
-            this.Controls.Add(this.lblFormClose);
-            this.Controls.Add(this.lblMin);
             this.Controls.Add(this.pEncoding);
             this.Controls.Add(this.pFind);
+            this.Controls.Add(this.lblFormClose);
+            this.Controls.Add(this.lblMin);
+            this.Controls.Add(this.listContents);
             this.Controls.Add(this.rtbContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -342,5 +356,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiEncoding;
         private System.Windows.Forms.RadioButton rdbUtf8;
         private System.Windows.Forms.RadioButton rdbGb2312;
+        private System.Windows.Forms.ListBox listContents;
     }
 }
